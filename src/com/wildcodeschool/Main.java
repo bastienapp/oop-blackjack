@@ -1,6 +1,5 @@
 package com.wildcodeschool;
 
-import com.wildcodeschool.model.Card;
 import com.wildcodeschool.model.Deck;
 import com.wildcodeschool.model.Player;
 import com.wildcodeschool.service.UserInterface;
@@ -8,7 +7,7 @@ import com.wildcodeschool.service.UserInterfaceTerminal;
 
 public class Main {
 
-    private static UserInterface userInterface = new UserInterfaceTerminal();
+    private static final UserInterface userInterface = new UserInterfaceTerminal();
 
     public static void main(String[] args) {
 
