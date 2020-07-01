@@ -2,9 +2,9 @@ package com.wildcodeschool.service;
 
 public interface UserInterface {
 
-    boolean playAgain();
+    String askText(String string);
 
-    boolean drawAgain();
+    boolean askAnswer(String question);
 
-    void print(String text);
+    void print(String... text);
 }

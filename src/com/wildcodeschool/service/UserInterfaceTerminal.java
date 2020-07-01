@@ -5,23 +5,22 @@ import java.util.Scanner;
 public class UserInterfaceTerminal implements UserInterface {
 
     @Override
-    public boolean playAgain() {
+    public String askText(String string) {
         Scanner scanner = new Scanner(System.in);
-        print("Play again ? (y/n)");
+        print(string);
+        return scanner.next();
+    }
+
+    @Override
+    public boolean askAnswer(String question) {
+        Scanner scanner = new Scanner(System.in);
+        print(question);
         String answer = scanner.next();
         return answer.equalsIgnoreCase("y");
     }
 
     @Override
-    public boolean drawAgain() {
-        Scanner scanner = new Scanner(System.in);
-        print("Draw again ? (y/n)");
-        String answer = scanner.next();
-        return answer.equalsIgnoreCase("y");
-    }
-
-    @Override
-    public void print(String text) {
-        System.out.println(text);
+    public void print(String... text) {
+        System.out.println(String.join(" ", text));
     }
 }

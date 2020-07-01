@@ -13,13 +13,13 @@ public class Player {
         this.name = name;
     }
 
-    public String draw(Deck deck) {
+    public Card draw(Deck deck) {
 
         Card card = deck.draw();
         cards.add(card);
         score += card.getValue();
 
-        return name + " draw " + card.toString();
+        return card;
     }
 
     public List<Card> getCards() {
