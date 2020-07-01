@@ -48,12 +48,12 @@ public class Main {
         // Si le joueur n'a pas perdu
         if (player.getScore() < 21) {
             // Le croupier révèle sa carte cachée
-            userInterface.print(player.getName(), "reveals", dealerFaceDown.toString());
+            userInterface.print(dealer.getName(), "reveals", dealerFaceDown.toString());
             // Tant que le croupier à un score < 17
             while (dealer.getScore() < 17) {
                 // Le dealer pioche une carte
                 // Le dealer révèle une carte
-                userInterface.print(dealer.draw(deck).toString());
+                userInterface.print(dealer.getName(), "draws", dealer.draw(deck).toString());
             }
         }
 
