@@ -1,8 +1,10 @@
 package com.wildcodeschool.service;
 
+import javafx.stage.Stage;
+
 public interface UserInterface {
 
-    default void init() {};
+    default void init(Stage stage) {};
 
     String askText(String string);
 
@@ -10,5 +12,5 @@ public interface UserInterface {
 
     void print(String... text);
 
-    default void close() {};
+    boolean clear();
 }

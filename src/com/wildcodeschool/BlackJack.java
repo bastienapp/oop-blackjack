@@ -4,21 +4,22 @@ import com.wildcodeschool.model.Card;
 import com.wildcodeschool.model.Deck;
 import com.wildcodeschool.model.Player;
 import com.wildcodeschool.service.UserInterface;
+import com.wildcodeschool.service.UserInterfaceJavaFX;
 import com.wildcodeschool.service.UserInterfaceTerminal;
+import javafx.stage.Stage;
 
 public class BlackJack {
 
-    private final UserInterface userInterface = new UserInterfaceTerminal();
+    private final UserInterface userInterface = new UserInterfaceJavaFX();
 
-    public void start() {
-        userInterface.init();
+    public void start(Stage stage) {
+        userInterface.init(stage);
         String name = userInterface.askText("What's your name?");
         do {
             play(name);
             // Tant que le joueur le désire, rejouer
-        } while (userInterface.askQuestion("Play again?"));
+        } while (userInterface.askQuestion("Play again?") && userInterface.clear());
         userInterface.print("Game over");
-        userInterface.close();
     }
 
     public void play(String name) {
