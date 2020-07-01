@@ -12,9 +12,9 @@ public class UserInterfaceTerminal implements UserInterface {
     }
 
     @Override
-    public boolean askAnswer(String question) {
+    public boolean askQuestion(String question) {
         Scanner scanner = new Scanner(System.in);
-        print(question);
+        print(question, "(y/n)");
         String answer = scanner.next();
         return answer.equalsIgnoreCase("y");
     }

@@ -2,9 +2,13 @@ package com.wildcodeschool.service;
 
 public interface UserInterface {
 
+    default void init() {};
+
     String askText(String string);
 
-    boolean askAnswer(String question);
+    boolean askQuestion(String question);
 
     void print(String... text);
+
+    default void close() {};
 }
